@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\LoginUSerRequest;
+use App\Http\Requests\LoginUserRequest;
 use App\Http\Requests\StoreUserRequest;
 
 
@@ -12,7 +12,7 @@ class AuthController extends Controller
 
     }
 
-    public function login(LoginUserREquest $request){
+    public function login(LoginUserRequest $request){
 
     }
 

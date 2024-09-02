@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\StoreModelController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,6 @@ Route::middleware('throttle:api')->controller(AuthController::class)->group(func
 
 
 //Список заведений (магазинов) Store
+Route::controller(StoreModelController::class)->group(function () {
+
+});
