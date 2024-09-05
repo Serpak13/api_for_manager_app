@@ -26,8 +26,8 @@ class StoreModelResource extends JsonResource
             'phone_number'=>$this->phone_number,
             'area_of_the_room'=>$this->area_of_the_room,
             'status'=>$this->status,
-            'created_at'=>$this->created_at,
-            'updated_at'=>$this->updated_at
+            //'created_at'=>$this->created_at,
+           // 'updated_at'=>$this->updated_at
         ];
     }
 }

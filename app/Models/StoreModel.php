@@ -22,4 +22,6 @@ class StoreModel extends Model
         'area_of_the_room',
         'status'
     ];
+
+    //protected $hidden = [];
 }

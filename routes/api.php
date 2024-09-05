@@ -19,7 +19,11 @@ Route::middleware('throttle:api')->controller(AuthController::class)->group(func
 
 //Список заведений (магазинов) Store
 Route::controller(StoreModelController::class)->group(function () {
-    Route::post('index', 'index');
-    Route::get('show/{id}', 'show');
-    Route::post('store', 'store');
+    Route::get('index', 'index'); //Получение всех записей
+    Route::get('show/{id}', 'show'); //Получение одной записи по ID
+    Route::post('store', 'store'); //Создание новой записи
+    Route::put('update/{id}', 'update'); //Обновление записи по ID
+    Route::delete('destroy/{id}', 'destroy'); //Удаление записи по ID
 });
+
+//Список товаров (техники)
