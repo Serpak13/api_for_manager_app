@@ -55,9 +55,20 @@ class StoreModelController extends Controller
             return response()->json(['message'=>'Item not found'],404);
         }
         $validatedData = $request->validate([
-
+            //добавить правила валидации
         ]);
         $item->update($validatedData);
         return response()->json($item);
+    }
+
+
+    //Удаление записи
+    public function destroy($id){
+        $item = StoreModel::find($id);
+        if(!$item){
+            return response()->json(['message'=>'Item not found'],404);
+        }
+        $item->delete();
+        return response()->json(['message'=>'Item deleted'],200);
     }
 }
