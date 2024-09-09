@@ -2,9 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Json;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;
+
+/**
+ * @property string name
+ * @property json tags
+ */
 
 class TechnicModel extends Model
 {
@@ -12,7 +18,10 @@ class TechnicModel extends Model
 
     protected $table = 'technic_models';
 
-    protected $fillable = [];
+    protected $fillable = [
+        'name',
+        'tags'
+    ];
 
     //Автоматическое преобразование в массив и обратно
     protected $casts = [

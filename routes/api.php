@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StoreModelController;
+use App\Http\Controllers\TechnicController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,10 @@ Route::controller(StoreModelController::class)->group(function () {
 });
 
 //Список товаров (техники)
+Route::controller(TechnicController::class)-> group(function(){
+    Route::get('technic/index', 'index'); //Получение всех записей
+    Route::get('technic/show/{id}', 'show'); //Получение одной записи по ID
+    Route::post('technic/store', 'store'); //Создание новой записи
+    Route::put('technic/update/{id}', 'update'); //Обновление записи по  ID
+    Route::delete('technic/destroy/{id}', 'destroy'); //Удаление записи по ID
+});

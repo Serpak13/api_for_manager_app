@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\TechnicResource;
+use App\Models\TechnicModel;
 use Illuminate\Http\Request;
 
 class TechnicController extends Controller
@@ -11,7 +13,8 @@ class TechnicController extends Controller
      */
     public function index()
     {
-        //
+        $technicModels = TechnicModel::all(); //Получение записи из базы данных
+        return TechnicResource::collection($technicModels); //возват коллекции ресурсов, в том виде, который прописан в  TechnicResource
     }
 
     /**
@@ -19,7 +22,7 @@ class TechnicController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -33,9 +36,13 @@ class TechnicController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $item = TechnicModel::find($id);
+        if(!$item){
+            return response()->json(['message' => 'Technic not found'], 404);
+        }
+        return new TechnicResource($item);
     }
 
     /**

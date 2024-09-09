@@ -5,7 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;
-
+/**
+ * @property string userName
+ * @property string userEmail
+ * @property string typeOfStore
+ * @property string location
+ * @property string address
+ * @property string phoneNumber
+ * @property integer areaOfTheRoom
+ * @property string status
+ */
 class StoreModel extends Model
 {
     use HasFactory, HasApiTokens;

@@ -17,7 +17,8 @@ class TechnicModelFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name'=> $this->faker->word(), //генерация случайного имени
+             'tags'=> $this->faker->words(3), //генерация массива из 3 случайных слов
         ];
     }
 }
